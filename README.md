@@ -21,26 +21,26 @@ You are now able to access information about the printer's network interfaces
 from within macros or display fields. For example, add the following to your
 menu override file to create a sub-list called "Network":
 
-```
+```cfg
 [menu __main __network]
 type: list
 name: Network
 
-[menu __main __network _mdns]
+[menu __main __network _mdns_hostname]
 type: command
-name: mDNS: {printer.network_status.mdns}
+name: mDNS: {printer.network_status.mdns_hostname}
 
-[menu __main __network _ethip]
+[menu __main __network _eth0_ip]
 type: command
-name: Eth IP: {printer.network_status.ethip}
+name: Eth IP: {printer.network_status.eth0_ip}
 
-[menu __main __network _wifissid]
+[menu __main __network _wlan0_ssid]
 type: command
-name: Wifi SSID: {printer.network_status.wifissid}
+name: Wi-Fi SSID: {printer.network_status.wlan0_ssid}
 
-[menu __main __network _wifiip]
+[menu __main __network _wlan0_ip]
 type: command
-name: Wifi IP: {printer.network_status.wifiip}
+name: Wi-Fi IP: {printer.network_status.wlan0_ip}
 ```
 
 I find that the text can be a little long for smaller displays so it may help
